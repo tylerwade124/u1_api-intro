@@ -51,26 +51,6 @@ API different from a full-stack application, is that an API won't render views,
 it'll just send back data. That data will generally be in one of two forms: XML
 or JSON.
 
-#### XML
-
-**XML** stands for "eXtensible Markup Language" and is the granddaddy of
-serialized data formats (itself based on HTML). XML is fat, ugly and cumbersome
-to parse. It is increasingly the less common of the two formats you'll
-encounter. It is still a major format due to its legacy usage across the web.
-You'll probably always favor using a JSON API, if available.
-
-XML looks like this:
-
-```xml
-<users>
-  <user id="23">
-    <name><![CDATA[Bob]]></name>
-  </user>
-  <user id="72">
-    <name><![CDATA[Tim]]></name>
-  </user>
-</users>
-```
 
 #### JSON
 
@@ -97,54 +77,6 @@ JSON looks like this:
 }
 ```
 
-## What is AJAX (15 minutes, 0:55)
-
-**AJAX** stands for "Asynchronous JavaScript and XML".
-
-Back in the early- and mid-1990s, the only way for a user to request new data
-was through the server-based request-response cycle. The user would click on a
-link or change some data in the UI and the whole page would reload. This was
-inefficient for the user and the User Experience; it was also an inefficient use
-of bandwidth, as an entire rendered page had to be transmitted rather than just
-the new or updated data.
-
-This is where AJAX came in to play. AJAX is a way for us to make HTTP requests
-in JavaScript. So we can make requests to our server (asynchronously) without
-having to reload the page!
-
-AJAX was first implemented in Internet Explorer as the `XMLHttpRequest` object
-and later adopted by Mozilla and Safari. In 2005, Gmail and Google Maps were
-rebuilt using `XMLHttpRequest` and a developer named Jesse James Garret wrote an
-article titled
-_"[Ajax: A New Approach to Web Applications](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)"_,
-where he coined the term _AJAX_.
-
-Building apps with `XMLHttpRequest` lead to a better user experience and faster
-applications but it was extremely verbose and cumbersome to work with. To make
-it easier, jQuery implemented the `.ajax()` api, abstracting away
-`XMLHttpRequest` into a chainable set of function calls. We won't be using jQuery
-in this course since it's an outdated library, but you can read more about `.ajax()`
-if interested: [http://api.jquery.com/jquery.ajax/](http://api.jquery.com/jquery.ajax/)
-
-More recently, WHATWG (the standards body for HTML) introduced the `fetch()` api
-as a browser-native implementation of AJAX similar to the jQuery api. Fetch has
-gained a lot of popularity in the past few years because its easy to use and
-doesn't require loading in jQuery. Today we will focus on fetch for our api
-calls.
-
-Here's an example of XMLHttpRequest in action. Note how annoying this would be
-to work with.
-
-```js
-function reqListener() {
-  console.log(this.responseText);
-}
-
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", reqListener);
-oReq.open("GET", "http://www.example.org/example.txt");
-oReq.send();
-```
 
 ### We Do: Working with an API
 
