@@ -149,20 +149,13 @@ request because PokeAPI is not strict in what it asks from us.
 
 Open your browser console and you should see the response getting logged!
 
-Now check out the network tab and you'll see something like this:
-
-![requests-1](./assets/network-tab-1.png)
-
+Now check out the network tab 
 This is a list of all the requests your browser has made since loading this
 page. Click on any of them to see details.
 
 The very first one is the html document itself. Loading that document will
 trigger other requests, like a script or a css file or any images the document
 might contain.
-
-Now click on the one that says `7`, this is the AJAX request to pokeapi:
-
-![requests-1](./assets/network-tab-2.png)
 
 You can see the request and response headers. All of this data is sent with
 every request!
