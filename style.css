@@ -1,0 +1,24 @@
+
+body {
+    text-align: center;
+    background-image: linear-gradient(rgba(244, 247, 98, 0.871), orange);
+}
+
+img {
+    padding: 35px;
+    padding-bottom: 60px;
+    max-height: 100px;
+    max-width: 150px;
+}
+
+#searchButton {
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: blue;
+    color: white;
+}
+p {
+    margin: 20px;
+}
